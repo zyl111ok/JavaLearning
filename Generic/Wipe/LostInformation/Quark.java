@@ -1,0 +1,1 @@
+public class Quark<POSITION1,POSITION2,POSITION3>{}

@@ -1,0 +1,1 @@
+public class Particle<PARTICLE_POSITION1,PERTICLE_POSITION2>{}
