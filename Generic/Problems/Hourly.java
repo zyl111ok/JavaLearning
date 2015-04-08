@@ -1,0 +1,1 @@
+public class Hourly extends Employee implements Payable{}
