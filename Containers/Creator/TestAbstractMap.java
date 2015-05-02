@@ -1,3 +1,4 @@
+package Creator;
 import java.util.*;
 public class TestAbstractMap extends AbstractMap<String,String>{
 	//defined abstract method entrySet(),readOnly Map
@@ -42,6 +43,17 @@ public class TestAbstractMap extends AbstractMap<String,String>{
 	private static Set<Map.Entry<String,String>> entries=new EntrySet(Contries.length);
 	public Set<Map.Entry<String,String>> entrySet(){return entries;} 
 
+	public static List<String> names(int tmpsize,List<String> list){
+		int size=tmpsize>Contries.length?Contries.length:tmpsize;
+		TestAbstractMap map=new TestAbstractMap();
+		Iterator<Map.Entry<String,String>> it=map.entrySet().iterator();
+		while(it.hasNext()){
+			Map.Entry<String,String> entry=it.next();
+			list.add(entry.getKey());
+		}
+		return list;
+
+	}
 	public static void main(String args[]){
 		TestAbstractMap map=new TestAbstractMap();
 		Iterator<Map.Entry<String,String>> it=map.entrySet().iterator();
