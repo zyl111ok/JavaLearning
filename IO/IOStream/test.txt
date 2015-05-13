@@ -1,0 +1,23 @@
+import java.io.;
+public class BufferedInputFile{
+	public static String read(String fileName){
+		try{
+			String temp;
+			StringBuilder sb=new StringBuilder();
+			FileReader fr=new FileReader(fileName);
+			BufferedReader br=new BufferedReader(fr);
+			while((temp=br.readLine())!=null){
+				sb.append(temp);
+			}
+			br.close();
+			return sb.toString(); 
+		}
+		catch(IOException e){
+			e.printStackTrace();
+			return null;
+		}
+	}
+	public static void main(String args[]){
+		System.out.print(read(BufferedInputFile.java));
+	}
+}

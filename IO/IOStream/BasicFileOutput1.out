@@ -1,0 +1,24 @@
+1: import java.io.*;
+2: public class BasicFileOutput{
+3: 	static String file="BasicFileOutput.out";
+4: 	static String file1="BasicFileOutput1.out";
+5: 	public static void main(String args[]) throws IOException{
+6: 		BufferedReader in=new BufferedReader(new StringReader(BufferedInputFile.read("BasicFileOutput.java")));
+7: 		PrintWriter out=new PrintWriter(new BufferedWriter(new FileWriter(file)));
+8: 		int lineCount=1;
+9: 		String s;
+10: 		while((s=in.readLine())!=null)
+11: 			out.println(lineCount++ +": "+s);
+12: 		in.close();
+13: 		out.close();
+14: 		
+15: 		lineCount=1;
+16: 		BufferedReader in1=new BufferedReader(new InputStreamReader(new FileInputStream("BasicFileOutput.java")));
+17: 		PrintWriter out1=new PrintWriter(new BufferedWriter(new FileWriter(file1)));
+18: 		while((s=in1.readLine())!=null)
+19: 			out1.println(lineCount++ +": "+s);
+20: 		in1.close();
+21: 		out1.close();
+22: 		System.out.println(BufferedInputFile.read(file1));
+23: 	}
+24: }
